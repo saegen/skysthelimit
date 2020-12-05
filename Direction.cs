@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SKY.Console
+namespace SKY.Mill
 {
     public enum Direction
     {

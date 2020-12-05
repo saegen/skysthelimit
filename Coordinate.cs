@@ -1,4 +1,4 @@
-﻿namespace SKY.Console
+﻿namespace SKY.Mill
 {
     public class Coordinate
     {

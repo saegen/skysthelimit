@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SKY.Console
+namespace SKY.Mill
 {
     public class PlayerObject
     {
         public PlayerObject(Coordinate position)
         {
             Position = position;
+            Direction = Direction.North;
+        }
+
+        public PlayerObject(int x, int y)
+        {
+            Position = new Coordinate(x,y);
             Direction = Direction.North;
         }
 
