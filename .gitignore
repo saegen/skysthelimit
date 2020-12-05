@@ -6,3 +6,5 @@
 /.vs
 /obj
 /bin/Debug/netcoreapp3.1
+/SimulationLibrary/bin/Debug/netcoreapp3.1
+/SimulationLibrary/obj

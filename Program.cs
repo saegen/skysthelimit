@@ -27,7 +27,6 @@ namespace SKY.Mill
             InitializeSimulation(args);
             
             Console.Out.WriteLine("Please enter commands: 1=Move forward, 2=Move backward, 3=Turn right, 4=Turn left, 0=Quit");
-            int t = -1;
             string command;
             var player = _world.Players[0];
             Console.Out.Write($"Player start: {player}{Environment.NewLine}");
