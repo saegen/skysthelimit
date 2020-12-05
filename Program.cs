@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using SimulationLibrary;
 namespace SKY.Mill
 {
@@ -10,21 +11,23 @@ namespace SKY.Mill
         
         static void Main(string[] args)
         {
-            if (args.Length != 4)
+            if (args.Length != 1 )
             {
-                Console.WriteLine($"Incorrect number of arguments: Expectes 4 integers. Got {args.Length}");
+                Console.WriteLine($"Incorrect number of arguments: Expectes comma separated string of integers. Got {args.Length}");
                 Environment.Exit(22);
             }
-            for (int i = 0; i < args.Length; i++)
+            int[] commands = null;
+            try
             {
-                if (!InputIsValid(args[i]))
-                {
-                    Console.WriteLine($"Argument {i}: is not an integer {args[i]}");
-                    Environment.Exit(22);
-                }
+                commands = args[0].Split(",").Select(a => int.Parse(a)).ToArray();
             }
-
-            InitializeSimulation(args);
+            catch (Exception)
+            {
+                Console.WriteLine($"Values must be integers");
+                Environment.Exit(22);
+            }
+            
+            InitializeSimulation(commands);
             
             Console.Out.WriteLine("Please enter commands: 1=Move forward, 2=Move backward, 3=Turn right, 4=Turn left, 0=Quit");
             string command;
@@ -43,10 +46,10 @@ namespace SKY.Mill
             } while (command != "0");
         }
 
-        public static void InitializeSimulation(string[] args)
+        public static void InitializeSimulation(int[] args)
         {
-            _world = new World(int.Parse(args[0]), int.Parse(args[1]));
-            var player = new PlayerObject(int.Parse(args[2]), int.Parse(args[3]));
+            _world = new World(args[0], args[1]);
+            var player = new PlayerObject(args[2], args[3]);
             _world.Players.Add(player);
         }
 
