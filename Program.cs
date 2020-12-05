@@ -7,7 +7,12 @@ namespace SKY.Main
     {
         static void Main(string[] args)
         {
-            Console.Out.WriteLine("Hello World!");
+
+            //if (args.Length != 4)
+            //{
+            //    throw new ArgumentException("Incorrect format: Valid format = int,int,int,int");
+            //}
+            //Console.Out.WriteLine("Hello World!");
 
         }
     }
