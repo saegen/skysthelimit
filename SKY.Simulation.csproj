@@ -5,9 +5,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SimulationLibrary\SimulationLibrary.csproj" />
-    <ProjectReference Include="SimulationLibrary\SimulationLibrary.csproj" />
-  </ItemGroup>
-
 </Project>
