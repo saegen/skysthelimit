@@ -10,6 +10,7 @@ namespace SKY.Mill
         {
             Width = width;
             Height = height;
+            Players = new List<PlayerObject>();
         }
         public List<PlayerObject> Players { get; set; }
         public int Width { get; set; }

@@ -25,6 +25,8 @@ namespace SKY.Mill
         {
             switch (command)
             {
+                case 0:
+                    return Position;
                 case 1: //Move Forward
                     switch (Direction)
                     {
@@ -63,13 +65,13 @@ namespace SKY.Mill
                     switch (Direction)
                     {
                         case Direction.North:
-                            Direction = Direction.West;
+                            Direction = Direction.East;
                             break;
                         case Direction.East:
                             Direction = Direction.South;
                             break;
                         case Direction.South:
-                            Direction = Direction.East;
+                            Direction = Direction.West;
                             break;
                         case Direction.West:
                             Direction = Direction.North;
@@ -97,6 +99,9 @@ namespace SKY.Mill
                     throw new ArgumentOutOfRangeException("Invalid command! Avaialable commands: 1 Move forward, 2 Move backward, 3 Turn right, 4 Turn left");
             }
         }
-            
+        public override string ToString()
+        {
+            return $"[{Position.X},{Position.Y}] facing {Direction}{Environment.NewLine}";
+        }
     }
 }
