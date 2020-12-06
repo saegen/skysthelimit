@@ -9,53 +9,42 @@ namespace SKY.Mill
     {
         private static World _world;
         
-        static void Main(string[] args)
+        static void Main()
         {
-            if (args.Length != 1 )
-            {
-                Console.WriteLine($"Incorrect number of arguments: Expectes comma separated string of integers. Got {args.Length}");
-                Environment.Exit(22);
-            }
+            string[] args = Environment.GetCommandLineArgs();
+            int[] setup = null;
             int[] commands = null;
             try
             {
-                commands = args[0].Split(",").Select(a => int.Parse(a)).ToArray();
+                //Inte den mest lättlästa koden...
+                setup = args[1].Split("=")[1].Split(",").Select(a => int.Parse(a)).ToArray(); ;
+                commands = args[2].Split("=")[1].Split(",").Select(a => int.Parse(a)).ToArray(); ;
             }
             catch (Exception)
             {
-                Console.WriteLine($"Values must be integers");
+                Console.WriteLine($"Incorrect usage: SSKY.Simulation setup=int,int,int,int commands=int,int...,int");
                 Environment.Exit(22);
             }
-            
-            InitializeSimulation(commands);
-            
+
+            _world = World.SetUp(setup);
+            var succes =_world.StartSimulation(commands);
+            Console.WriteLine($"{_world.Player.Position}");
+            Environment.Exit(0);
+
+
             Console.Out.WriteLine("Please enter commands: 1=Move forward, 2=Move backward, 3=Turn right, 4=Turn left, 0=Quit");
             string command;
-            var player = _world.Players[0];
+            var player = _world.Player;
             Console.Out.Write($"Player start: {player}{Environment.NewLine}");
             do
             {
                 command = Console.In.ReadLine();
-                //Console.Out.WriteLine(command);
-                //Console.Out.Write($"command: {int.Parse(command)}{Environment.NewLine}");
-                
-                //Console.Out.Write($"Player before command: {player}{Environment.NewLine}");
                 player.Command(int.Parse(command));
                 Console.Out.Write($"Player after command: {player}{Environment.NewLine}");
-                
+
             } while (command != "0");
         }
 
-        public static void InitializeSimulation(int[] args)
-        {
-            _world = new World(args[0], args[1]);
-            var player = new PlayerObject(args[2], args[3]);
-            _world.Players.Add(player);
-        }
-
-        private static bool InputIsValid(string input)
-        {
-            return int.TryParse(input, out _);
-        }
+        
     }
 }
