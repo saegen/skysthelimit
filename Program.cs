@@ -33,18 +33,6 @@ namespace SKY.Mill
             Console.WriteLine($"{_world.Player.Position}");
             Environment.Exit(0);
 
-
-            Console.Out.WriteLine("Please enter commands: 1=Move forward, 2=Move backward, 3=Turn right, 4=Turn left, 0=Quit");
-            string command;
-            var player = _world.Player;
-            Console.Out.Write($"Player start: {player}{Environment.NewLine}");
-            do
-            {
-                command = Console.In.ReadLine();
-                player.Command(int.Parse(command));
-                Console.Out.Write($"Player after command: {player}{Environment.NewLine}");
-
-            } while (command != "0");
         }
 
         
