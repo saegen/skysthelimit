@@ -23,12 +23,16 @@ namespace SimulationLibrary
             return _world;
         }
 
-        public bool StartSimulation(int[] cómmands)
+        public bool StartSimulation(int[] cómmands, bool showpath)
         {
             foreach (var command in cómmands)
             {
                 Player.Command(command);
-                Console.WriteLine($"command:{command} => {Player}");
+                if (showpath)
+                {
+                    Console.WriteLine($"command:{command} => {Player}");
+                }
+                
                 if (Player.Position == OffBoard)
                 {
                     return false;
