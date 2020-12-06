@@ -95,7 +95,7 @@ namespace SimulationLibrary
                     }
                     return Position;
                 default:
-                    throw new ArgumentOutOfRangeException("Invalid command! Avaialable commands: 1 Move forward, 2 Move backward, 3 Turn right, 4 Turn left");
+                    throw new ArgumentOutOfRangeException($"Invalid command! Avaialable commands: {Environment.NewLine} 1: Move forward{Environment.NewLine} 2: Move backward{Environment.NewLine} 3: Turn right{Environment.NewLine} 4: Turn left{Environment.NewLine}");
             }
         }
         public override string ToString()

@@ -28,10 +28,19 @@ namespace SKY.Mill
                 Environment.Exit(22);
             }
 
-            _world = World.SetUp(setup);
-            var succes =_world.StartSimulation(commands,showPath);
-            Console.WriteLine($"{_world.Player.Position}");
-            Environment.Exit(0);
+            try
+            {
+                _world = World.SetUp(setup);
+                var succes = _world.StartSimulation(commands, showPath);
+                Console.WriteLine($"{_world.Player.Position}");
+                Environment.Exit(0);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
+                Environment.Exit(13);
+            }
+            
 
         }
 

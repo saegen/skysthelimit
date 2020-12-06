@@ -14,6 +14,7 @@
  En misslyckad definieras av att objektet går utanför världens kanter. 
  Simulering skriver ut sista koordinaterna för objektet. På formen [X,Y].
  En misslyckad simmulering kommer att skriva [-1,-1]
+ En lyckad exekvering kommer även ge 0 som exit code: dvs Environment.Exit(0);
  
  ## Projektet ligger på GitHub
  [Skys the limit](https://github.com/saegen/skysthelimit)
