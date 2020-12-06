@@ -9,7 +9,7 @@
 	* 2: Gå ett steg bakåt från aktuell riktning.
 	* 3: Byt riktning genom att svänga 90 grader åt vänster.
 	* 3: Byt riktning genom att svänga 90 grader åt höger.
-	* 0: Kommer att stänga applikationen.
+	* 0: Avsluta.
 
  En misslyckad definieras av att objektet går utanför världens kanter. 
  Simulering skriver ut sista koordinaterna för objektet. På formen [X,Y].
@@ -31,8 +31,10 @@
 	* [Optional] showPath: Optional En flagga. Om den anges kommer hela simuleringen att skrivas ut annars kommer bara slutpositionen att skrivas ut.
 
 
-
  ## Todo:
- * Kör på Mac
- * Validering av commands
- * Lägg till UnitTests  
+ * Faktorisera ut interfaces så att man kan byta ut instanserna av World och PlayerObject.
+ * Testa på Mac.
+ * Förbättra argument parsning. Separera hantering av de olika argumenten i olika funktioner inklusive validering av värdena.
+ * Lägg till UnitTests för biblioteket.
+ * Var inte med i spec men fel bör skrivas till stderr och inte stdout som nu.
+ 
