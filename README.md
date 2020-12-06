@@ -35,6 +35,6 @@
  * Faktorisera ut interfaces så att man kan byta ut instanserna av World och PlayerObject.
  * Testa på Mac.
  * Förbättra argument parsning. Separera hantering av de olika argumenten i olika funktioner inklusive validering av värdena.
- * Lägg till UnitTests för biblioteket.
+ * Lägg till UnitTests för SimulatonLibrary.
  * Var inte med i spec men fel bör skrivas till stderr och inte stdout som nu.
  
