@@ -19,13 +19,20 @@
  [Skys the limit](https://github.com/saegen/skysthelimit)
  
  ## Använding
-	Exempel/Syntax:
+	Exempel:
+	Kör en simulering där världen är en 4x4 matris och objektet startar på position [2,2]. 
+	Kommandona flyttar objektet över världen enligt ovan och det sista kommandot, dvs 0, kommer att avsluta simuleringen.
+	
+	###Syntax:
 	<PathToExecutable>/SKY.Simulation init=4,4,2,2 command=1,4,1,3,2,3,2,4,1,0 showPath
 	
 	* [Required] init: Kommaseparerad lista av 4 heltal. De två första anger världens
 	* [Required] command: Kommaseparerad lista av heltal betående av de commands som anges ovan.
 	* [Optional] showPath: Optional En flagga. Om den anges kommer hela simuleringen att skrivas ut annars kommer bara slutpositionen att skrivas ut.
 
- ## Todo
- Validering av commands
- Lägg till UnitTests  
+
+
+ ## Todo:
+ * Kör på Mac
+ * Validering av commands
+ * Lägg till UnitTests  
